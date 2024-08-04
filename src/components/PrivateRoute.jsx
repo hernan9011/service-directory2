@@ -1,6 +1,6 @@
 // src/components/PrivateRoute.jsx
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/useAuth';
 import PropTypes from 'prop-types';
 
 export default function PrivateRoute({ children }) {
