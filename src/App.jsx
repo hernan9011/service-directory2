@@ -1,20 +1,18 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './components/Login';
-import ServiceList from './components/ServiceList';
+import styled from "styled-components";
 import { AuthProvider } from './contexts/AuthContext';
-import PrivateRoute from './components/PrivateRoute';
+import { MyRoutes } from "./routers/routes";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/services" element={<PrivateRoute><ServiceList /></PrivateRoute>} />
-        </Routes>
-      </AuthProvider>
-    </Router>
+    <AuthProvider>
+      <Container>
+        <MyRoutes />
+      </Container>
+    </AuthProvider>
   );
 }
-
-export default App;
+const Container = styled.div`
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+`;
